@@ -43,14 +43,8 @@ export class CronParser {
       parsed.unshift("");
       parsed.push("");
     } else if (parsed.length == 6) {
-      //If last element ends with 4 digits, a year element has been supplied and no seconds element
-      if (/\d{4}$/.test(parsed[5])) {
-        // year provided
-        parsed.unshift("");
-      } else {
-        // seconds provided
-        parsed.push("");
-      }
+      // year provided
+      parsed.unshift("");
     } else if (parsed.length > 7) {
       throw new Error(`Expression has ${parsed.length} parts; too many!`);
     }
